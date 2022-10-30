@@ -42,9 +42,10 @@ jobs:
       - name: curl stuff
         run: |
           echo "here"
-          bash curl
+	  curl -v
           curl http://localhost:9011 > curl_result_docker
           cat curl_result_docker
+        shell: bash
   destroy:
     needs: check
     runs-on: ubuntu-latest
