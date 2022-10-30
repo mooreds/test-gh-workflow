@@ -42,9 +42,10 @@ jobs:
       - name: curl stuff
         run: |
           echo "here"
-          curl http://localhost:9011/tmp/logo-white.svg > curl_result_docker.1
-          curl http://localhost:9011/ > curl_result_docker.2
+          curl http://172.17.0.1:9011/tmp/logo-white.svg > curl_result_docker.1
+          curl http://172.17.0.1:9011/ > curl_result_docker.2
           ls
+          cat curl_result_docker.1
           cat curl_result_docker.2
         shell: bash
   destroy:
