@@ -39,9 +39,11 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - run: curl
-      - run: curl http://localhost:9011 > curl_result_docker
-      - run: cat curl_result_docker
+      - run: |
+        echo "here"
+        bash curl
+        curl http://localhost:9011 > curl_result_docker
+        cat curl_result_docker
   destroy:
     needs: check
     runs-on: ubuntu-latest
