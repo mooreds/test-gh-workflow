@@ -42,7 +42,7 @@ jobs:
       - name: curl stuff
         run: |
           echo "here"
-	  curl -v
+          curl -v
           curl http://localhost:9011 > curl_result_docker
           cat curl_result_docker
         shell: bash
