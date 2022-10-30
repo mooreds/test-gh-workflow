@@ -44,7 +44,7 @@ jobs:
           echo "here"
           curl http://localhost:9011/tmp/logo-white.svg > curl_result_docker.1
           curl http://localhost:9011/ > curl_result_docker.2
-	  ls
+          ls
           cat curl_result_docker.2
         shell: bash
   destroy:
