@@ -14,10 +14,10 @@ jobs:
     steps:
       # Checks out repository under $GITHUB_WORKSPACE, so job can access it
       - uses: actions/checkout@v2
-      - uses: isbang/compose-action@v1.4.0
-        with:
-          compose-file: './src/test/docker/docker-compose.yml'
-          down-flags: '--volumes'
+      - name: run Docker-Compose & a command inside one of the Compose containers inside the same step
+        run: |
+          docker-compose up -d -f  ./src/test/docker/docker-compose.yml
+          docker ps -a
       - name: Run a one-line script
         run: echo Hello, world!
       #- name: Check to see if FusionAuth is running
