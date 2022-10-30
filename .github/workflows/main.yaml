@@ -30,8 +30,10 @@ jobs:
         #run: |
           #bash ./src/test/docker/poll-for-kickstart-finish.sh
         #shell: bash
-      - name: Get Applications from FusionAuth
-        run: |
-          curl -H 'Authorization: bf69486b-4733-4470-a592-f1bfce7af580' http://fusionauth:9011/api/application
-      - name: Run a one-line script
-        run: echo Hello, world!
+      #- name: Get Applications from FusionAuth
+        #run: |
+          #curl -H 'Authorization: bf69486b-4733-4470-a592-f1bfce7af580' http://fusionauth:9011/api/application
+      #- name: Run a one-line script
+        #run: echo Hello, world!
+      - name: Destroy the FusionAuth instance
+        run: docker-compose -f  ./src/test/docker/docker-compose.yml down -v
