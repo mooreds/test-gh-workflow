@@ -36,6 +36,7 @@ jobs:
       #- name: Run a one-line script
         #run: echo Hello, world!
   check:
+    needs: build
     runs-on: ubuntu-latest
     container: ubuntu
     steps:
@@ -43,6 +44,7 @@ jobs:
       - run: curl fusionauth:9011 > curl_result_docker
       - run: cat curl_result_docker
   destroy:
+    needs: check
     runs-on: ubuntu-latest
     steps:
       - name: Destroy the FusionAuth instance
