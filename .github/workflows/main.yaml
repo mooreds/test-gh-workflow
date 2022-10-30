@@ -21,6 +21,10 @@ jobs:
           docker network ls
           cont=`docker ps -a |grep fusionauth|awk '{print $1}'`
           docker logs $cont
+	  sleep 10
+	  echo "finished sleeping"
+          docker logs $cont
+	  
       - name: Run a one-line script
         run: echo Hello, world!
       #- name: Check to see if FusionAuth is running
