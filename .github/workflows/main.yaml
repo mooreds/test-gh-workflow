@@ -22,7 +22,7 @@ jobs:
           cont=`docker ps -a |grep fusionauth|awk '{print $1}'`
           docker logs $cont
 	  sleep 10
-	  echo "finished sleeping"
+          echo "finished sleeping"
           docker logs $cont
 	  
       - name: Run a one-line script
