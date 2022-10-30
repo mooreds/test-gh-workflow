@@ -17,4 +17,5 @@ jobs:
 
       - name: Run a one-line script
         run: echo Hello, world!
-
+      - id: test
+        uses: mooreds/test-gh-action@v1
