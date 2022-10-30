@@ -16,11 +16,11 @@ jobs:
       - uses: actions/checkout@v2
       - uses: isbang/compose-action@v1.4.0
         with:
-	  compose-file: './src/test/docker/docker-compose.yml'
-	  down-flags: '--volumes'
+          compose-file: './src/test/docker/docker-compose.yml'
+          down-flags: '--volumes'
       - name: Run a one-line script
         run: echo Hello, world!
       #- name: Check to see if FusionAuth is running
         #run: |
-	  #bash ./src/test/docker/poll-for-kickstart-finish.sh
-	#shell: bash
+          #bash ./src/test/docker/poll-for-kickstart-finish.sh
+        #shell: bash
