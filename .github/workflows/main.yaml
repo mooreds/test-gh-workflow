@@ -11,7 +11,6 @@ jobs:
   # The build job
   build:
     runs-on: ubuntu-latest
-    container: ubuntu
     steps:
       # Checks out repository under $GITHUB_WORKSPACE, so job can access it
       - uses: actions/checkout@v2
@@ -39,7 +38,6 @@ jobs:
   check:
     needs: build
     runs-on: ubuntu-latest
-    container: ubuntu
     steps:
       - run: apt-get update; apt-get install curl -y
       - run: curl http://localhost:9011 > curl_result_docker
